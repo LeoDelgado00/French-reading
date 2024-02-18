@@ -34,13 +34,22 @@ fun Greeting(name: String) {
         modifier = Modifier
             .fillMaxSize() // Ocupa todo el espacio disponible
             .padding(16.dp)
-            .androidx.compose.foundation.layout.align(Alignment.CenterHorizontally) // Usar la ruta completa de `align`
+            .align(Alignment.CenterHorizontally) // Centra horizontalmente el texto
     )
 }
 
 @Composable
 fun MyAppContent() {
-    // El resto de tu código
+    Column(
+        modifier = Modifier
+            .fillMaxSize() // Ocupa todo el espacio disponible
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,  // Centra verticalmente el contenido
+        horizontalAlignment = Alignment.CenterHorizontally // Centra horizontalmente el contenido
+    ) {
+        Greeting("FrenchBooks")
+        // ... Aquí se agregarán las demás funciones
+    }
 }
 
 @Preview(showBackground = true)
